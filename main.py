@@ -39,7 +39,7 @@ async def retrieve_documents(query: str, k: int):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.post("/chat/")
+@app.post("/chat")
 async def chat(request: QueryRequest):
     try:
         messages = react_graph_memory.invoke(
